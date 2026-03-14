@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+h1 {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 40px 0 0 0;
+}
+
+h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+}
+
+nav {
+    font-family: "Nanum Myeongjo", serif;
+    width: 100%;
+    text-transform: capitalize;
+    padding: 40px 0;
+    background: #fff;
+}
+
+/* 메뉴 고정 시 원래 자리 유지용 (문서 높이 불변 → 스크롤 깜빡임 방지) */
+.menu-spacer {
+    display: block;
+    width: 100%;
+}
+
+/* .title h1이 스크롤로 가려지면 메뉴가 상단에 고정됨 (js/Index.js에서 .is-fixed 토글) */
+nav.menu.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* 스크롤 시 떨림 방지: 별도 GPU 레이어에서 그려지도록 */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+nav ul {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+nav ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav ul li {
+    float: left;
+    margin-right: 60px;
+    color: #888;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li.active a {
+    color: #000;
+}
+
+nav ul li a:hover {
+    color: #000;
+    transition: color 0.5s ease;
+}
+

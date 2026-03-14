@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+section {
+    font-family: "Nanum Myeongjo", serif;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.product-wrap {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 왼쪽 열 고정 너비 → 오른쪽 목록이 항상 같은 위치에서 시작 (글자 수와 무관) */
+.product-list>li {
+    display: grid;
+    grid-template-columns: 11em 1fr;
+    align-items: center;
+    column-gap: 2rem;
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-bottom: 1px solid #888;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-list>li .product-list-item {
+    margin: 0;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.product-list>li:first-child {
+    margin-top: 0;
+    border-top: 1px solid #888;
+}
+
+/* .product-list > li의 bold가 자손에게 상속되므로, 하위 목록만 보통 굵기로 */
+.product-list-item li {
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+/* p가 있는 항목만: 금액(왼쪽) / 설명(오른쪽) */
+.product-list-item li:has(p) {
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.product-list-item li p {
+    margin: 0;
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+main {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+    padding: 40px 0;
+}
+
+main img {
+    display: block;
+    width: 500px;
+    height: auto;
+    margin: 0 auto 50px;
+}
+
+main .text-wrap p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+main .text-wrap strong {
+    font-family: "Dancing Script", cursive;
+    font-size: 14px;
+    margin-top: 30px;
+    display: block;
+}

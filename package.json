@@ -1,0 +1,11 @@
+{
+  "name": "tantanfilm",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=tantanfilm",
+    "preview": "npx serve ."
+  },
+  "devDependencies": {
+    "wrangler": "^3"
+  }
+}

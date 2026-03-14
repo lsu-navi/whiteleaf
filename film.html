@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>film</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/film.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="js/Index.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="title">
+            <h1>tantanfilm</h1>
+            <h2>the wedding day</h2>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li class="active"><a href="film.html">film</a></li>
+                <li><a href="product.html">product</a></li>
+                <li><a href="reservation.html">reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="film-wrap">
+        <section class="film-grid">
+            <!-- data-youtube-id에 영상 ID만 넣으면 됩니다 -->
+            <button type="button" class="film-item" data-youtube-id="9bZkp7q19f0">
+                <img class="film-thumb" src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="가천컨벤션">
+                <span class="film-caption">가천컨벤션</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="OPf0YbXqDm0">
+                <img class="film-thumb" src="https://img.youtube.com/vi/OPf0YbXqDm0/hqdefault.jpg" alt="그래머시 코리아">
+                <span class="film-caption">그래머시 코리아</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="jNQXAC9IVRw">
+                <img class="film-thumb" src="https://img.youtube.com/vi/jNQXAC9IVRw/hqdefault.jpg" alt="블란서 가든">
+                <span class="film-caption">블란서 가든</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="kJQP7kiw5Fk">
+                <img class="film-thumb" src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="수서 빌라드지디">
+                <span class="film-caption">수서 빌라드지디</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="RgKAFK5djSk">
+                <img class="film-thumb" src="https://img.youtube.com/vi/RgKAFK5djSk/hqdefault.jpg" alt="신도림 더세인트">
+                <span class="film-caption">신도림 더세인트</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="09R8_2nJtjg">
+                <img class="film-thumb" src="https://img.youtube.com/vi/09R8_2nJtjg/hqdefault.jpg" alt="신도림 라마다">
+                <span class="film-caption">신도림 라마다</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="dBn6uF13Ppc">
+                <img class="film-thumb" src="https://img.youtube.com/vi/dBn6uF13Ppc/hqdefault.jpg" alt="엘리에나호텔">
+                <span class="film-caption">엘리에나호텔</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="CevxZvSJLk8">
+                <img class="film-thumb" src="https://img.youtube.com/vi/CevxZvSJLk8/hqdefault.jpg" alt="용산 로얄파크">
+                <span class="film-caption">용산 로얄파크</span>
+            </button>
+            <button type="button" class="film-item" data-youtube-id="JGwWNGJdvx8">
+                <img class="film-thumb" src="https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg" alt="인터콘티넨탈 파르나스">
+                <span class="film-caption">인터콘티넨탈 파르나스</span>
+            </button>
+        </section>
+    </main>
+
+    <div class="film-modal" id="filmModal" aria-hidden="true">
+        <div class="film-modal-backdrop"></div>
+        <div class="film-modal-content">
+            <button type="button" class="film-modal-close" aria-label="닫기">&times;</button>
+            <div class="film-modal-video">
+                <iframe id="filmModalIframe" src="about:blank" title="YouTube 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="owner">대표: KIM TAE WOONG</p>
+
+
+        <p class="business-number">사업자등록번호: 304-18-19783</p>
+        <p class="copyright">copyright &copy; TANTANFILM all right reserved.</p>
+
+    </footer>
+
+    <script>
+        (function () {
+            var modal = document.getElementById("filmModal");
+            var iframe = document.getElementById("filmModalIframe");
+            var closeBtn = modal && modal.querySelector(".film-modal-close");
+            var backdrop = modal && modal.querySelector(".film-modal-backdrop");
+
+            function openModal(videoId) {
+                if (!modal || !iframe || !videoId) return;
+                iframe.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&rel=0";
+                modal.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeModal() {
+                if (!modal || !iframe) return;
+                iframe.src = "about:blank";
+                modal.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+
+            document.addEventListener("click", function (e) {
+                var item = e.target.closest(".film-item[data-youtube-id]");
+                if (item) {
+                    e.preventDefault();
+                    openModal(item.getAttribute("data-youtube-id"));
+                }
+                if (e.target === closeBtn || e.target === backdrop) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal && modal.getAttribute("aria-hidden") === "false") {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

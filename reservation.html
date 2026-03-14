@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 - 탄탄필름</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/reservation.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="js/index.js"></script>
+    <script src="js/reservation.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>tantanfilm</h1>
+            <h2>the wedding day</h2>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="film.html">film</a></li>
+                <li><a href="product.html">product</a></li>
+                <li class="active"><a href="reservation.html">reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="reservation-wrap">
+        <div class="reservation-notice">
+            <p>* 예약금 20만원 입금 후 신청서 작성해 주시면 확인 후 연락드립니다.</p>
+            <p>* 입금 계좌: 기업은행 673-002122-01-014 예금주 김태웅</p>
+            <p>* 메시지 확인 및 입금 확인 후 예약이 완료됩니다.</p>
+            <p>* 예약 완료 후 7일 이내 이메일로 계약서 발송, 본식 3일 전 일정 확인 및 잔금 결제 안내 연락 드립니다.</p>
+            <p>* 예약 전 상담원과 일정 가능 여부 확인 후 예약 부탁드립니다.</p>
+        </div>
+
+        <form class="reservation-form" action="#" method="post">
+            <fieldset class="form-section">
+                <legend>본식영상 상품 <span class="required">*</span></legend>
+                <div class="field">
+                    <select name="product" id="product" required>
+                        <option value="" disabled selected>상품 선택</option>
+                        <option value="basic">본식영상 기본</option>
+                        <option value="premium">본식영상 프리미엄</option>
+                    </select>
+                    <span class="required">*</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>예약자 정보 <span class="required">*</span></legend>
+                <div class="field-row">
+                    <div class="field">
+                        <input type="text" name="reserver_name" id="reserver_name" placeholder="성함" required>
+                        <span class="required">*</span>
+                    </div>
+                    <div class="field">
+                        <input type="tel" name="reserver_contact" id="reserver_contact" placeholder="예약자 연락처" required>
+                        <span class="required">*</span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>배우자 정보 <span class="required">*</span></legend>
+                <div class="field-row">
+                    <div class="field">
+                        <input type="text" name="spouse_name" id="spouse_name" placeholder="성함" required>
+                        <span class="required">*</span>
+                    </div>
+                    <div class="field">
+                        <input type="tel" name="spouse_contact" id="spouse_contact" placeholder="배우자 연락처" required>
+                        <span class="required">*</span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>예식 일정 <span class="required">*</span></legend>
+                <div class="field date-time-row">
+                    <input type="date" name="wedding_date" id="wedding_date" required aria-label="예식 날짜">
+                    <select name="wedding_hour" id="wedding_hour" required>
+                        <option value="" disabled selected>시 선택</option>
+                    </select>
+                    <select name="wedding_minute" id="wedding_minute" required>
+                        <option value="" disabled selected>분 선택</option>
+                    </select>
+                    <span class="required">*</span>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>예식 장소 <span class="required">*</span></legend>
+                <div class="field-row">
+                    <div class="field">
+                        <input type="text" name="venue_name" id="venue_name" placeholder="예식장 이름" required>
+                        <span class="required">*</span>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="hall_name" id="hall_name" placeholder="예식홀 이름" required>
+                        <span class="required">*</span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>옵션 <span class="required">*</span></legend>
+                <div class="option-list">
+                    <label class="option-item">
+                        <input type="checkbox" name="option_2nd" value="70000">
+                        <span>2부 예식 및 폐백촬영 추가 7만원 (vat포함)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" name="option_makeup" value="200000">
+                        <span>메이크업 촬영 추가 20만원 (vat포함)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" name="option_prewedding" value="350000">
+                        <span>가봉, 프리웨딩영상 35만원 (vat포함)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" name="option_director" value="100000">
+                        <span>대표지정 10만원 (vat포함)</span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>폐백 유무 <span class="required">*</span></legend>
+                <div class="radio-row">
+                    <label class="radio-item">
+                        <input type="radio" name="pyebaek" value="yes" required>
+                        <span>유</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="pyebaek" value="no">
+                        <span>무</span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>계약하신 본식스냅 업체명 <span class="required">*</span></legend>
+                <div class="field">
+                    <input type="text" name="snap_company" id="snap_company" placeholder="업체명 입력" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>이메일 <span class="required">*</span></legend>
+                <div class="field">
+                    <input type="email" name="email" id="email" placeholder="이메일 주소 입력" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>기타 문의사항 <span class="required">*</span></legend>
+                <p class="form-note">하단의 옵션 선택시 반드시 일정 문의 바랍니다.</p>
+                <div class="field">
+                    <textarea name="inquiry" id="inquiry" rows="6" placeholder="문의 내용을 입력해 주세요" required></textarea>
+                </div>
+            </fieldset>
+
+            <!-- 계약 내용 확인 및 개인정보 수집 이용동의서 -->
+            <div class="agreement-section">
+                <h3 class="agreement-title">계약 내용 확인 및 개인정보 수집 이용동의서</h3>
+                <div class="agreement-box">
+                    <article class="agreement-article">
+                        <h4>제1조【계약의 목적】</h4>
+                        <p>안녕하세요. 김태웅 웨딩필름과의 계약을 감사드립니다.<br>
+                        본 계약은 고객님께서 진행하시는 촬영을 '김태웅 웨딩필름'에게 위탁하고 '김태웅 웨딩필름'이 관련 작업을 수행하는 것을 규율함을 목적으로 합니다.<br>
+                        예약 폼을 작성 하시고 예약금 입금이 완료 되시면 본 계약의 효력이 발생한다는 것을 합의함을 원칙으로 합니다. 예약 확정 후 문자 메시지를 통해 개별적으로 계약 확인 연락을 드립니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제2조【촬영 및 촬영자 배정】</h4>
+                        <p>웨딩의 경우 촬영의 범위는 기본적으로 예식장 도착부터 본식이후 연회장 하객인사나 폐백중에 먼저 진행되는 부분까지이며,<br>
+                        폐백과 연회장 하객인사(2부 행사)를 모두 촬영하시길 원하시는 경우 2부 추가를 해주시면 됩니다.(추가비용 7만원 발생)<br>
+                        또한 원본영상이 예식을 100% 촬영을 뜻하는 것은 아니며 물리적으로 상황상 전체적인 모든 장면이 모두 촬영되지 않습니다.<br>
+                        영상의 다양한 앵글의 화각촬영을 위하여 카메라를 움직이는 과정에서 제외되는 부분이 발생될수 있습니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제3조【예약 및 환불】</h4>
+                        <p>예약은 위임인이 예약금 20만원을 김태웅 웨딩필름 대표계좌로 입금하시고 확인이 되면 예약 확정이 됩니다.<br>
+                        예약 완료 후 작성해주신 이메일을 통해 계약서가 발송됩니다.<br>
+                        예약금 입금 후 3일 이내(입금기준 72시간) 취소하는 경우 예약금 전액 환불 가능합니다.<br>
+                        그 이후는 환불이 불가능 하오니 이점 양해 바랍니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제4조【잔금 지불】</h4>
+                        <p>예약금 외 나머지 잔금은 촬영일 7일 전까지 완납 해주시는 것을 원칙으로 하며 잔금이 지불되지 않은 상태에서는 촬영을 진행하지 않으며 계약 위반으로 위약금이 청구될 수 있습니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제5조【상품 수정】</h4>
+                        <p>영상 제작 오류로 인해 영상이 재생되지 않거나, 영상이 끊길 경우, 잘못된 영상이 출력된 경우 재발송 가능합니다.<br>
+                        영상 수정의 경우 상품수령후 14일 안으로만 가능하시며 14일 이후에는 수정이 불가능합니다.<br>
+                        수정이 가능한 경우에는 영상 수령후 14일 안에, 제3자가 봤을때에도 명백한 오류일 경우에는 수정 가능하시며<br>
+                        영상 수령 14일 이후의 수정건 요청의 경우에는 1회당 10만원의 추가비용이 발생되며, 정확한 시간과 교체할 영상을 체크해서 보내주셔야합니다.<br>
+                        또한 작업요청이 과도하다고 김태웅 웨딩필름이 판단될경우 거절할 권리가 있습니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제6조【원본 보존】</h4>
+                        <p>원본은 편집본의 납품이 끝난 후에 영상 수령후기를 작성해주셔야 이메일을 통해 무료 제공 해드립니다.<br>
+                        상품 발송 후 한달 후에 원본이 삭제 되오니 컴퓨터에 백업 부탁 드리며 혹여라도 영상에 이상이 있으시면 1주 안에 연락 부탁 드립니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제7조【보상 규정】</h4>
+                        <p>소비자피해보상규정에 의거하여 편집본 납품전 촬영원본의 멸실 및 재해로 인한 사고 발생 시 촬영 계약금 전액을 환불해드립니다.<br>
+                        촬영 계약금 이외 피해보상은 결과물에 대한 손실 정도에 따라 상호 합의하에 계약금액의 2배까지 배상합니다.<br>
+                        고객의 단순변심 또는 영상의 스타일상의 이유, 혹은 촬영현장 여건 등의 문제로 발생한 모든 내용은 환불 및 기타보상 대상에서 제외됩니다.</p>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제8조【위약금 규정】</h4>
+                        <p class="agreement-intro">계약서에 명시된 예식(촬영)일로 부터</p>
+                        <ul class="penalty-list">
+                            <li><span class="penalty-desc">60일 미만 취소 및 연기 - 총 잔금액의</span><span class="penalty-pct">30%</span></li>
+                            <li><span class="penalty-desc">30일 미만 취소 및 연기 - 총 잔금액의</span><span class="penalty-pct">50%</span></li>
+                            <li><span class="penalty-desc">07일 미만 취소 및 연기 - 총 잔금액의</span><span class="penalty-pct">70%</span></li>
+                        </ul>
+                    </article>
+                    <article class="agreement-article">
+                        <h4>제9조【저작권 및 초상권】</h4>
+                        <p>저작권은 김태웅 웨딩필름이 소유하게 되며, 해당 상품에 모든 인물의 초상권은 신랑신부님의 권한입니다. 김태웅 웨딩필름은 제작된 영상을 홈페이지 등에 게시 할수 있으며<br>
+                        미리 홈페이지나 블로그 등의 게시 거부 의사를 말씀해주시면 절대로 게시하지 않습니다.<br>
+                        이미 게시되어진 영상 및 사진에 대하여 신랑 신부님께서 게시를 불허한 경우 조속히 해당 게시내용을 삭제합니다.</p>
+                    </article>
+                    <p class="agreement-disclaimer">※ 김태웅 웨딩필름과 고객은 위 내용을 충분히 이해하며, 예약 진행된 모든 상품은 촬영약관에 동의한 것으로 간주 됩니다.</p>
+                </div>
+                <label class="agreement-check">
+                    <input type="checkbox" name="agreement" required>
+                    <span>위 내용을 확인하였으며 동의합니다</span>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">예약 신청</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p class="owner">대표: KIM TAE WOONG</p>
+        <p class="business-number">사업자등록번호: 304-18-19783</p>
+        <p class="copyright">copyright &copy; TANTANFILM all right reserved.</p>
+    </footer>
+</body>
+
+</html>

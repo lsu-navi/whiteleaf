@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+.reservation-wrap {
+    font-family: "Nanum Myeongjo", serif;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    color: #333;
+}
+
+/* 상단 안내 문구 */
+.reservation-notice {
+    background: #f5f5f5;
+    padding: 24px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.reservation-notice p {
+    margin: 0 0 8px 0;
+}
+
+.reservation-notice p:last-child {
+    margin-bottom: 0;
+}
+
+/* 폼 섹션 */
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.form-section {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.form-section legend {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.required {
+    color: #c00;
+    margin-left: 2px;
+}
+
+/* 공통 입력 필드 */
+.reservation-form input[type="text"],
+.reservation-form input[type="tel"],
+.reservation-form input[type="email"],
+.reservation-form input[type="date"],
+.reservation-form select,
+.reservation-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fafafa;
+    color: #333;
+}
+
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder {
+    color: #999;
+}
+
+.reservation-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.reservation-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 한 줄에 별표 오른쪽 */
+.field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.field input,
+.field select {
+    flex: 1;
+}
+
+.field .required {
+    flex-shrink: 0;
+}
+
+/* 두 칸 나란히 (예약자/배우자 정보, 예식 장소) */
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field-row .field {
+    min-width: 0;
+}
+
+/* 예식 일정: 날짜·시·분 */
+.date-time-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-time-row input[type="date"],
+.date-time-row select {
+    width: auto;
+    min-width: 140px;
+}
+
+/* 옵션 체크박스 */
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.option-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #333;
+    cursor: pointer;
+}
+
+/* 폐백 유무 라디오 */
+.radio-row {
+    display: flex;
+    gap: 24px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.radio-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #333;
+    cursor: pointer;
+}
+
+/* 기타 문의사항 안내 문구 */
+.form-note {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 8px 0;
+}
+
+.form-section .form-note + .form-note {
+    margin-top: 0;
+}
+
+.form-section .field {
+    margin-top: 8px;
+}
+
+/* 계약 내용 확인 및 개인정보 수집 이용동의서 */
+.agreement-section {
+    margin-top: 8px;
+}
+
+.agreement-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.agreement-box {
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    padding: 28px 24px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #333;
+}
+
+.agreement-article {
+    margin-bottom: 20px;
+}
+
+.agreement-article:last-of-type {
+    margin-bottom: 0;
+}
+
+.agreement-article h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.agreement-article p {
+    margin: 0;
+    color: #333;
+}
+
+.agreement-intro {
+    margin-bottom: 8px;
+}
+
+.penalty-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.penalty-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+.penalty-desc {
+    flex: 1;
+}
+
+.penalty-pct {
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.agreement-disclaimer {
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.agreement-check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.agreement-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #333;
+    cursor: pointer;
+}
+
+/* 제출 버튼 */
+.form-actions {
+    margin-top: 20px;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #fff;
+    color: #333;
+    outline: 0.5px solid #333;
+    transition: all 0.2s ease;
+}
