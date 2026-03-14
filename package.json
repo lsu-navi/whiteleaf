@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "echo 'Static site - no build step'",
-    "deploy": "wrangler pages deploy . --project-name=tantanfilme",
+    "deploy": "wrangler deploy",
     "preview": "npx serve ."
   },
   "devDependencies": {

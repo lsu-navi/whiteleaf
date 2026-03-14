@@ -42,9 +42,9 @@ npm run deploy
 3. 저장소 선택
 4. **Framework preset**: None
 5. 설정 (중요):
-   - **Build command**: **비워두기** (공란으로 두기)  
-     → `npm run deploy`, `wrangler deploy` 등 절대 입력하지 말 것 (Workers 명령이라 에러 발생)
-   - **Build output directory**: `/` 또는 `.` (프로젝트 루트)
+   - **Deploy command**: `echo "done"` (또는 `true`)
+   - **Build output directory**: 반드시 **`.`** (점 하나, 프로젝트 루트)
+     → `dist`, `build` 등으로 되어 있으면 Pages not found 발생
 6. Save and Deploy
 
 ---
