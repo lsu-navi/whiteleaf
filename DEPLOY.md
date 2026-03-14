@@ -40,9 +40,12 @@ npm run deploy
 1. GitHub에 저장소 푸시
 2. Cloudflare 대시보드 → **Pages** → **Create** → **Connect to Git**
 3. 저장소 선택
-4. 설정:
-   - **Build command**: 비워두기 (또는 `echo "no build"`)
-   - **Build output directory**: `/` (프로젝트 루트)
+4. **Framework preset**: None
+5. 설정 (중요):
+   - **Build command**: **비워두기** (공란으로 두기)  
+     → `npm run deploy`, `wrangler deploy` 등 절대 입력하지 말 것 (Workers 명령이라 에러 발생)
+   - **Build output directory**: `/` 또는 `.` (프로젝트 루트)
+6. Save and Deploy
 
 ---
 
