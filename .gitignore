@@ -3,3 +3,10 @@ node_modules/
 *.log
 .env
 .env.local
+
+# 비디오 파일 (용량 큼)
+video/
+*.mp4
+*.mov
+*.webm
+*.mkv
