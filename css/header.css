@@ -97,6 +97,9 @@ nav ul li a:hover {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
         gap: 10px 16px;
     }
 
@@ -108,9 +111,9 @@ nav ul li a:hover {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-width: 361px) {
     nav {
-        padding: 35px 0;
+        padding: 35px 10px;
     }
 
     nav ul {
@@ -118,7 +121,10 @@ nav ul li a:hover {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px 39px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 12px;
+        gap: 10px 30px;
     }
 
     nav ul li {
