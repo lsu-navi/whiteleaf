@@ -87,3 +87,44 @@ nav ul li a:hover {
     transition: color 0.5s ease;
 }
 
+@media (max-width: 360px) {
+    nav {
+        padding: 24px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    nav ul li {
+        float: none;
+        margin-right: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 35px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 39px;
+    }
+
+    nav ul li {
+        float: none;
+        margin-right: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+}

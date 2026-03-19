@@ -129,3 +129,19 @@
 }
 
 /* YouTube 썸네일: img.youtube.com/vi/영상ID/hqdefault.jpg (고해상도는 maxresdefault.jpg) */
+
+@media (max-width: 600px) {
+    .film-wrap {
+        padding: 24px 12px 40px;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .film-caption {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

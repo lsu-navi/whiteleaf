@@ -32,3 +32,14 @@ section .main-text  strong {
     font-weight: bold;
     padding: 10px 0 40px 0;
 }
+
+@media (max-width: 600px) {
+
+    section .main-text p {
+        font-size: 12px;
+    }
+
+    section .main-text strong {
+        font-size: 14px;
+    }
+}

@@ -3,7 +3,8 @@
 section {
     font-family: "Nanum Myeongjo", serif;
     width: 100%;
-    margin: 40px 0;
+    margin: 40px 0 0;
+    padding-bottom: 40px;
 }
 
 .product-wrap {
@@ -19,7 +20,7 @@ section {
     align-items: center;
     column-gap: 2rem;
     padding: 40px 20px;
-    margin: 20px 0;
+    margin: 40px 0;
     border-bottom: 1px solid #888;
     font-size: 18px;
     font-weight: bold;
@@ -53,4 +54,18 @@ section {
 
 .product-list-item li p {
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .product-list>li {
+        font-size: 14px;
+    }
+
+    .product-list-item li {
+        font-size: 12px;
+    }
+
+    .product-list-item li p {
+        font-size: 12px;
+    }
 }

@@ -26,3 +26,17 @@ main .text-wrap strong {
     margin-top: 30px;
     display: block;
 }
+
+@media (max-width: 600px) {
+    main .text-wrap {
+        padding: 0 24px;
+    }
+
+    main .text-wrap p {
+        font-size: 12px;
+    }
+
+    main .text-wrap strong {
+        font-size: 12px;
+    }
+}

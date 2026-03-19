@@ -5,7 +5,7 @@
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    padding: 40px 20px 60px;
+    padding: 40px 20px 40px;
     color: #333;
 }
 
@@ -309,4 +309,51 @@
     color: #333;
     outline: 0.5px solid #333;
     transition: all 0.2s ease;
+}
+@media (max-width: 600px) {
+    .reservation-wrap {
+        padding: 28px 16px 32px;
+        font-size: 12px;
+    }
+
+    .reservation-notice {
+        font-size: 12px;
+        padding: 18px 14px;
+    }
+
+    .form-section legend {
+        font-size: 14px;
+    }
+
+    .reservation-form input[type="text"],
+    .reservation-form input[type="tel"],
+    .reservation-form input[type="email"],
+    .reservation-form input[type="date"],
+    .reservation-form select,
+    .reservation-form textarea {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .option-item,
+    .radio-item,
+    .form-note,
+    .agreement-box,
+    .agreement-disclaimer,
+    .agreement-check {
+        font-size: 12px;
+    }
+
+    .agreement-article h4 {
+        font-size: 13px;
+    }
+
+    .agreement-title {
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
 }
