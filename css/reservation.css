@@ -253,11 +253,6 @@
     flex: 1;
 }
 
-.penalty-pct {
-    flex-shrink: 0;
-    font-weight: bold;
-}
-
 .agreement-disclaimer {
     margin: 20px 0 0 0;
     font-size: 14px;

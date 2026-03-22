@@ -56,6 +56,16 @@ section {
     margin: 0;
 }
 
+.product-list-item li a {
+    text-decoration: underline;
+    color: #000;
+    transition: color 0.5s ease;
+}
+
+.product-list-item li a:hover {
+    color: red;
+}
+
 @media (max-width: 600px) {
     .product-list>li {
         font-size: 14px;
