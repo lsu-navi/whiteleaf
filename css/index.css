@@ -8,24 +8,31 @@ section {
     width: 100%;
 }
 
-/* 헤더(h1+h2+nav) 아래 남는 높이 안에 비디오가 들어오도록 (스크롤 없이 보이게) */
-.main-hero-video {
-    display: block;
+.main-hero-video-wrap {
+    position: relative;
     width: 100%;
-    max-height: calc(100vh - 260px);
-    max-height: calc(100dvh - 260px);
-    min-height: 0;
-    object-fit: cover;
-    object-position: center;
-    background: #000;
+    height: calc(100vh - 180px);
+    min-height: 360px;
+    overflow: hidden;
     margin-bottom: 40px;
 }
 
-@media (max-width: 600px) {
-    .main-hero-video {
-        max-height: calc(100vh - 320px);
-        max-height: calc(100dvh - 320px);
-    }
+.main-hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh;
+    height: 56.25vw;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    pointer-events: none;
+}
+
+.main-hero .main-text {
+    color: inherit;
+    text-shadow: none;
 }
 
 section .main-text  p {
@@ -49,6 +56,10 @@ section .main-text  strong {
 }
 
 @media (max-width: 600px) {
+    .main-hero-video-wrap {
+        height: calc(100vh - 240px);
+        min-height: 300px;
+    }
 
     section .main-text p {
         font-size: 12px;
