@@ -66,6 +66,74 @@ section {
     color: red;
 }
 
+/* 상품 영상 모달 */
+.product-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.product-video-modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-video-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.product-video-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    z-index: 1;
+}
+
+.product-video-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    font-size: 28px;
+    line-height: 1;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.product-video-close:hover {
+    color: #ccc;
+}
+
+.product-video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 600px) {
     .product-list>li {
         font-size: 14px;

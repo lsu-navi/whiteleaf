@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/footer.css">
 
-    <script src="js/Index.js"></script>
+    <script src="js/Index.js" defer></script>
+    <script src="js/product.js" defer></script>
 </head>
 
 <body>
@@ -50,10 +51,10 @@
                 </li>
                 <li>받아볼 영상 구성
                     <ul class="product-list-item">
-                        <li><a href="#">#1.하이라이트 챕터</a></li>
-                        <li><a href="#">#2.본식 전 다큐영상</a></li>
-                        <li><a href="#">#3.본식 풀영상</a></li>
-                        <li><a href="#">#4.본식 후 다큐영상</a></li>
+                        <li><a href="#" class="product-video-link" data-youtube-id="z4EN25lwOgc">#1.하이라이트 챕터</a></li>
+                        <li><a href="#" class="product-video-link" data-youtube-id="2Lcprdba7G4">#2.본식 전 다큐영상</a></li>
+                        <li><a href="#" class="product-video-link" data-youtube-id="LoK_AAZ5vmE">#3.본식 풀영상</a></li>
+                        <li><a href="#" class="product-video-link" data-youtube-id="AORL2uHoMus">#4.본식 후 다큐영상</a></li>
                     </ul>
                 </li>
                 <li>추가옵션
@@ -83,6 +84,18 @@
             </ul>
         </div>
     </section>
+
+    <div class="product-video-modal" id="productVideoModal" aria-hidden="true">
+        <div class="product-video-backdrop"></div>
+        <div class="product-video-content">
+            <button type="button" class="product-video-close" aria-label="닫기">&times;</button>
+            <div class="product-video-frame">
+                <iframe id="productVideoIframe" src="about:blank" title="상품 영상" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p class="owner">대표: KIM TAE WOONG</p>
