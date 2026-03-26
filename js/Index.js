@@ -2,43 +2,58 @@ document.addEventListener("DOMContentLoaded", function () {
   const titleH1 = document.querySelector(".title h1");
   const menu = document.querySelector(".menu");
   const header = document.querySelector("header");
+  const FIX_THRESHOLD = 6;
+  const UNFIX_AT_TOP = 24;
 
   if (!titleH1 || !menu || !header) return;
 
   let spacer = null;
+  let isFixed = false;
+
+  function ensureSpacer() {
+    const menuHeight = menu.offsetHeight;
+    if (!spacer) {
+      spacer = document.createElement("div");
+      spacer.className = "menu-spacer";
+      header.insertBefore(spacer, menu);
+    }
+    spacer.style.height = menuHeight + "px";
+  }
+
+  function removeSpacer() {
+    if (spacer && spacer.parentNode) {
+      spacer.parentNode.removeChild(spacer);
+      spacer = null;
+    }
+  }
+
+  function setFixed(nextFixed) {
+    if (nextFixed === isFixed) return;
+    isFixed = nextFixed;
+    if (nextFixed) {
+      ensureSpacer();
+      menu.classList.add("is-fixed");
+      return;
+    }
+    menu.classList.remove("is-fixed");
+    removeSpacer();
+  }
 
   const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
-        const titleTop = entry.boundingClientRect.top;
+        // 교차선 근처에서 출렁이는 현상을 줄이기 위해 히스테리시스 적용
         if (entry.isIntersecting) {
-          // 고정 해제: title이 충분히 내려왔을 때, 또는 스크롤이 맨 위일 때(.title 원상복귀)
-          const atTop = window.scrollY < 20;
-          if (titleTop > 50 || atTop) {
-            menu.classList.remove("is-fixed");
-            if (spacer && spacer.parentNode) {
-              spacer.parentNode.removeChild(spacer);
-              spacer = null;
-            }
-          }
-        } else {
-          // .title h1이 가려졌을 때: 메뉴 상단 고정 + spacer로 자리 유지 (문서 높이 불변 → 깜빡임 방지)
-          const menuHeight = menu.offsetHeight;
-          if (!spacer) {
-            spacer = document.createElement("div");
-            spacer.className = "menu-spacer";
-            spacer.style.height = menuHeight + "px";
-            header.insertBefore(spacer, menu);
-          } else {
-            spacer.style.height = menuHeight + "px";
-          }
-          menu.classList.add("is-fixed");
+          const shouldUnfix = entry.intersectionRatio > FIX_THRESHOLD / 100 || window.scrollY <= UNFIX_AT_TOP;
+          if (shouldUnfix) setFixed(false);
+          return;
         }
+        setFixed(true);
       });
     },
     {
-      threshold: 0,
-      rootMargin: "-2px 0px 0px 0px",  /* 살짝 넘어갈 때만 전환해서 경계에서 드르륵 방지 */
+      threshold: [0, FIX_THRESHOLD / 100],
+      rootMargin: "0px 0px 0px 0px",
     }
   );
 
@@ -46,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 스크롤을 맨 위로 올렸을 때도 고정 해제 (observer는 교차 상태가 바뀔 때만 호출되므로)
   function tryUnstickAtTop() {
-    if (!menu.classList.contains("is-fixed")) return;
-    if (window.scrollY > 30) return;
-    menu.classList.remove("is-fixed");
-    if (spacer && spacer.parentNode) {
-      spacer.parentNode.removeChild(spacer);
-      spacer = null;
-    }
+    if (!isFixed) return;
+    if (window.scrollY > UNFIX_AT_TOP) return;
+    setFixed(false);
   }
 
   window.addEventListener("scroll", tryUnstickAtTop, { passive: true });
+  window.addEventListener("resize", function () {
+    if (!isFixed || !spacer) return;
+    spacer.style.height = menu.offsetHeight + "px";
+  });
 });
