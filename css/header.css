@@ -16,10 +16,13 @@ ol, ul, li {
 }
 
 h1 {
-    font-family: "Nanum Myeongjo", serif;
+    /* font-family: "Nanum Myeongjo", serif; */
+    /* font-family: "trajan-pro-3", serif; */
+    font-family: "GFS Didot", serif;
     font-size: 36px;
+    /* font-style: italic; */
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     padding: 40px 0 0 0;
 }
 
@@ -27,14 +30,19 @@ h2 {
     font-family: "Dancing Script", cursive;
     font-size: 16px;
     color: #888;
-    text-align: center;
+    text-align: left;
+}
+
+.title {
+    padding: 0 60px;
 }
 
 nav {
-    font-family: "Nanum Myeongjo", serif;
+    /* font-family: "Nanum Myeongjo", serif; */
+    font-family: "montserrat", sans-serif;
     width: 100%;
     text-transform: capitalize;
-    padding: 40px 0;
+    padding: 30px 60px 40px;
     background: #fff;
 }
 
@@ -88,6 +96,15 @@ nav ul li a:hover {
 }
 
 @media (max-width: 360px) {
+    .title {
+        padding: 0 16px;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
     nav {
         padding: 24px 0;
     }
@@ -112,6 +129,15 @@ nav ul li a:hover {
 }
 
 @media (max-width: 600px) and (min-width: 361px) {
+    .title {
+        padding: 0 24px;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
     nav {
         padding: 35px 10px;
     }
