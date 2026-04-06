@@ -95,6 +95,17 @@ nav ul li a:hover {
     transition: color 0.5s ease;
 }
 
+@media (max-width: 1500px) {
+    .title {
+        padding: 0;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+}
+
 @media (max-width: 360px) {
     .title {
         padding: 0 16px;
@@ -123,12 +134,12 @@ nav ul li a:hover {
     nav ul li {
         float: none;
         margin-right: 0;
-        font-size: 13px;
+        font-size: 12px;
         text-align: center;
     }
 }
 
-@media (max-width: 660px) and (min-width: 361px) {
+@media (max-width: 660px) and (min-width: 385px) {
     .title {
         padding: 0 24px;
     }
@@ -161,13 +172,4 @@ nav ul li a:hover {
     }
 }
 
-@media (max-width: 1500px) {
-    .title {
-        padding: 0;
-    }
 
-    h1,
-    h2 {
-        text-align: center;
-    }
-}

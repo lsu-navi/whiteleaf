@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약 - 탄탄필름</title>
+    <title>예약 - white leaf</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
@@ -54,8 +54,7 @@
                 <div class="field">
                     <select name="product" id="product" required>
                         <option value="" disabled selected>상품 선택</option>
-                        <option value="basic">본식영상 기본</option>
-                        <option value="premium">본식영상 프리미엄</option>
+                        <option value="basic">본식영상</option>
                     </select>
                     <span class="required">*</span>
                 </div>
@@ -121,20 +120,16 @@
                 <legend>옵션 <span class="required">*</span></legend>
                 <div class="option-list">
                     <label class="option-item">
-                        <input type="checkbox" name="option_2nd" value="70000">
-                        <span>2부 예식 및 폐백촬영 추가 7만원 (vat포함)</span>
+                        <input type="checkbox" name="option_1st" value="70000">
+                        <span>추가 사항 없음</span>
                     </label>
                     <label class="option-item">
-                        <input type="checkbox" name="option_makeup" value="200000">
-                        <span>메이크업 촬영 추가 20만원 (vat포함)</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="checkbox" name="option_prewedding" value="350000">
-                        <span>가봉, 프리웨딩영상 35만원 (vat포함)</span>
+                        <input type="checkbox" name="option_1st" value="70000">
+                        <span>실장 1인 추가 (2인 3캠) 35만원 (vat포함)</span>
                     </label>
                     <label class="option-item">
                         <input type="checkbox" name="option_director" value="100000">
-                        <span>대표지정 10만원 (vat포함)</span>
+                        <span>대표지정 17만원 (슬라이더 레일캠 무빙촬영) (vat포함)</span>
                     </label>
                 </div>
             </fieldset>
@@ -169,10 +164,11 @@
 
             <fieldset class="form-section">
                 <legend>기타 문의사항 <span class="required">*</span></legend>
-                <p class="form-note">하단의 옵션 선택시 반드시 일정 문의 바랍니다.</p>
+                <p class="form-note">하단의 옵션 선택시 반드시 일정 문의 바랍니다. (500자 이내)</p>
                 <div class="field">
-                    <textarea name="inquiry" id="inquiry" rows="6" placeholder="문의 내용을 입력해 주세요" required></textarea>
+                    <textarea name="inquiry" id="inquiry" rows="6" maxlength="500" placeholder="문의 내용을 입력해 주세요" required></textarea>
                 </div>
+                <p class="char-counter" id="inquiry-counter" aria-live="polite">500자 남음</p>
             </fieldset>
 
             <!-- 계약 내용 확인 및 개인정보 수집 이용동의서 -->
@@ -181,8 +177,8 @@
                 <div class="agreement-box">
                     <article class="agreement-article">
                         <h4>제1조【계약의 목적】</h4>
-                        <p>안녕하세요. 김태웅 웨딩필름과의 계약을 감사드립니다.<br>
-                        본 계약은 고객님께서 진행하시는 촬영을 '김태웅 웨딩필름'에게 위탁하고 '김태웅 웨딩필름'이 관련 작업을 수행하는 것을 규율함을 목적으로 합니다.<br>
+                        <p>안녕하세요. 화이트리프와의 계약을 감사드립니다.<br>
+                        본 계약은 고객님께서 진행하시는 촬영을 '화이트리프'에게 위탁하고 '화이트리프'가 관련 작업을 수행하는 것을 규율함을 목적으로 합니다.<br>
                         예약 폼을 작성 하시고 예약금 입금이 완료 되시면 본 계약의 효력이 발생한다는 것을 합의함을 원칙으로 합니다. 예약 확정 후 문자 메시지를 통해 개별적으로 계약 확인 연락을 드립니다.</p>
                     </article>
                     <article class="agreement-article">
@@ -194,7 +190,7 @@
                     </article>
                     <article class="agreement-article">
                         <h4>제3조【예약 및 환불】</h4>
-                        <p>예약은 위임인이 예약금 20만원을 김태웅 웨딩필름 대표계좌로 입금하시고 확인이 되면 예약 확정이 됩니다.<br>
+                        <p>예약은 위임인이 예약금 20만원을 화이트리프 대표계좌로 입금하시고 확인이 되면 예약 확정이 됩니다.<br>
                         예약 완료 후 작성해주신 이메일을 통해 계약서가 발송됩니다.<br>
                         예약금 입금 후 3일 이내(입금기준 72시간) 취소하는 경우 예약금 전액 환불 가능합니다.<br>
                         그 이후는 환불이 불가능 하오니 이점 양해 바랍니다.</p>
@@ -233,11 +229,11 @@
                     </article>
                     <article class="agreement-article">
                         <h4>제9조【저작권 및 초상권】</h4>
-                        <p>저작권은 김태웅 웨딩필름이 소유하게 되며, 해당 상품에 모든 인물의 초상권은 신랑신부님의 권한입니다. 김태웅 웨딩필름은 제작된 영상을 홈페이지 등에 게시 할수 있으며<br>
+                        <p>저작권은 화이트리프가 소유하게 되며, 해당 상품에 모든 인물의 초상권은 신랑신부님의 권한입니다. 화이트리프는 제작된 영상을 홈페이지 등에 게시 할 수 있으며<br>
                         미리 홈페이지나 블로그 등의 게시 거부 의사를 말씀해주시면 절대로 게시하지 않습니다.<br>
                         이미 게시되어진 영상 및 사진에 대하여 신랑 신부님께서 게시를 불허한 경우 조속히 해당 게시내용을 삭제합니다.</p>
                     </article>
-                    <p class="agreement-disclaimer">※ 김태웅 웨딩필름과 고객은 위 내용을 충분히 이해하며, 예약 진행된 모든 상품은 촬영약관에 동의한 것으로 간주 됩니다.</p>
+                    <p class="agreement-disclaimer">※ 화이트리프와 고객은 위 내용을 충분히 이해하며, 예약 진행된 모든 상품은 촬영약관에 동의한 것으로 간주 됩니다.</p>
                 </div>
                 <label class="agreement-check">
                     <input type="checkbox" name="agreement" required>
@@ -254,7 +250,7 @@
     <footer>
         <p class="owner">대표: KIM TAE WOONG</p>
         <p class="business-number">사업자등록번호: 304-18-19783</p>
-        <p class="copyright">copyright &copy; TANTANFILM all right reserved.</p>
+        <p class="copyright">copyright &copy; WHITE LEAF all right reserved.</p>
     </footer>
 </body>
 

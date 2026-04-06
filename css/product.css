@@ -52,6 +52,17 @@ section {
     column-gap: 1rem;
 }
 
+.product-list-item li.price-item {
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.product-list-item li.price-item .price {
+    display: block;
+}
+
 .product-list-item li p {
     margin: 0;
 }

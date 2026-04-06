@@ -187,6 +187,13 @@
     margin-top: 8px;
 }
 
+.char-counter {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #777;
+    text-align: right;
+}
+
 /* 계약 내용 확인 및 개인정보 수집 이용동의서 */
 .agreement-section {
     margin-top: 8px;
@@ -297,13 +304,20 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.btn-submit:hover {
+.btn-submit:disabled {
+    background: #aaa;
+    color: #f3f3f3;
+    cursor: not-allowed;
+    outline: none;
+}
+
+.btn-submit:not(:disabled):hover {
     background: #fff;
     color: #333;
     outline: 0.5px solid #333;
-    transition: all 0.2s ease;
 }
 @media (max-width: 600px) {
     .reservation-wrap {
