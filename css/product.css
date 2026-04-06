@@ -13,6 +13,12 @@ section {
     margin: 0 auto;
 }
 
+.product-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 /* 왼쪽 열 고정 너비 → 오른쪽 목록이 항상 같은 위치에서 시작 (글자 수와 무관) */
 .product-list>li {
     display: grid;
@@ -20,7 +26,7 @@ section {
     align-items: center;
     column-gap: 2rem;
     padding: 40px 20px;
-    margin: 40px 0;
+    margin: 0;
     border-bottom: 1px solid #888;
     font-size: 18px;
     font-weight: bold;
@@ -30,6 +36,7 @@ section {
 .product-list>li .product-list-item {
     margin: 0;
     padding-left: 0;
+    list-style: none;
     font-size: 14px;
 }
 
