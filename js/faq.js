@@ -12,6 +12,7 @@ function loadFaqList(page) {
 
     if (!listEl) return;
 
+    listEl.classList.remove('loaded');
     listEl.innerHTML = '<div class="faq-status">로딩 중...</div>';
     if (paginationEl) paginationEl.innerHTML = '';
 
@@ -65,6 +66,7 @@ function renderFaqList(items, container) {
     }
 
     container.innerHTML = html;
+    container.classList.add('loaded');
 }
 
 function toggleFaqItem(questionEl) {

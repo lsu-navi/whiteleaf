@@ -82,8 +82,7 @@ function submitReservation(form) {
     }
 
     var productTypeMap = {
-        'basic': '본식영상 기본',
-        'premium': '본식영상 프리미엄'
+        'basic': '화이트리프 본식영상'
     };
 
     var weddingTime = null;
