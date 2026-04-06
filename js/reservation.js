@@ -45,7 +45,97 @@ function handleReservationSubmit(event) {
     }
 
     event.preventDefault();
-    alert("예약 확정 되셨습니다. 빠른 시일 내에 확인 후 연락드리도록 하겠습니다!");
+    submitReservation(form);
+}
+
+function submitReservation(form) {
+    var submitBtn = form.querySelector('.btn-submit');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '제출 중...';
+    }
+
+    var product = form.querySelector('[name="product"]').value;
+    var reserverName = form.querySelector('[name="reserver_name"]').value;
+    var reserverContact = form.querySelector('[name="reserver_contact"]').value;
+    var spouseName = form.querySelector('[name="spouse_name"]').value;
+    var spouseContact = form.querySelector('[name="spouse_contact"]').value;
+    var weddingDate = form.querySelector('[name="wedding_date"]').value;
+    var weddingHour = form.querySelector('[name="wedding_hour"]').value;
+    var weddingMinute = form.querySelector('[name="wedding_minute"]').value;
+    var venueName = form.querySelector('[name="venue_name"]').value;
+    var hallName = form.querySelector('[name="hall_name"]').value;
+    var snapCompany = form.querySelector('[name="snap_company"]').value;
+    var email = form.querySelector('[name="email"]').value;
+    var inquiry = form.querySelector('[name="inquiry"]').value;
+
+    var pyebaekRadio = form.querySelector('[name="pyebaek"]:checked');
+    var hasPyebaek = pyebaekRadio ? pyebaekRadio.value === 'yes' : false;
+
+    var options = [];
+    var optionCheckboxes = form.querySelectorAll('[name^="option_"]:checked');
+    for (var i = 0; i < optionCheckboxes.length; i++) {
+        var label = optionCheckboxes[i].parentElement.querySelector('span');
+        if (label) {
+            options.push(label.textContent.trim());
+        }
+    }
+
+    var productTypeMap = {
+        'basic': '본식영상 기본',
+        'premium': '본식영상 프리미엄'
+    };
+
+    var weddingTime = null;
+    if (weddingHour && weddingMinute) {
+        weddingTime = weddingHour + ':' + weddingMinute + ':00';
+    }
+
+    var reservationData = {
+        product_type: productTypeMap[product] || product,
+        reserver_name: reserverName,
+        reserver_phone: reserverContact,
+        spouse_name: spouseName,
+        spouse_phone: spouseContact,
+        wedding_date: weddingDate || null,
+        wedding_time: weddingTime,
+        venue_name: venueName,
+        venue_hall: hallName,
+        option_type: options.length > 0 ? options.join(', ') : null,
+        has_pyebaek: hasPyebaek,
+        snap_company: snapCompany,
+        reserver_email: email,
+        inquiry: inquiry
+    };
+
+    supabase
+        .from('reservations')
+        .insert([reservationData])
+        .then(function(response) {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '예약 신청';
+            }
+
+            if (response.error) {
+                console.error('Reservation error:', response.error);
+                alert('예약 신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해 주세요.');
+                return;
+            }
+
+            alert('예약 신청이 완료되었습니다.\n확인 후 연락드리겠습니다.');
+            form.reset();
+            updateInquiryCounter();
+            updateSubmitButtonState();
+        })
+        .catch(function(err) {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '예약 신청';
+            }
+            console.error('Reservation error:', err);
+            alert('예약 신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해 주세요.');
+        });
 }
 
 function updateSubmitButtonState() {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>white leaf</title>
+    <title>FAQ - 탄탄필름</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
@@ -12,10 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/faq.css">
     <link rel="stylesheet" href="css/footer.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
     <script src="js/Index.js"></script>
+    <script src="js/faq.js"></script>
 </head>
 
 <body>
@@ -29,36 +32,30 @@
 
         <nav class="menu">
             <ul>
-                <li class="active"><a href="index.html">home</a></li>
+                <li><a href="index.html">home</a></li>
                 <li><a href="about.html">about</a></li>
                 <li><a href="film.html">film</a></li>
                 <li><a href="product.html">product</a></li>
                 <li><a href="reservation.html">reservation</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li class="active"><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="main-hero">
-        <div class="main-hero-video-wrap" aria-hidden="true">
-            <iframe class="main-hero-video"
-                src="https://www.youtube-nocookie.com/embed/z4EN25lwOgc?autoplay=0&loop=1&playlist=z4EN25lwOgc&controls=1&rel=0&modestbranding=1&playsinline=1"
-                title="메인 영상" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                allowfullscreen></iframe>
+    <main class="faq-wrap">
+        <h2 class="faq-title">자주 묻는 질문</h2>
+
+        <div id="faq-list" class="faq-list">
+            <div class="faq-status">로딩 중...</div>
         </div>
-        <div class="main-text">
-            <p>가장 탄탄한 약속, 당신의 가장 찬란한 순간.</p>
-            <strong>흔들림 없는 진심을 담습니다.</strong>
-        </div>
-    </section>
+
+        <div id="faq-pagination" class="faq-pagination"></div>
+    </main>
 
     <footer>
         <p class="owner">대표: KIM TAE WOONG</p>
-
-
         <p class="business-number">사업자등록번호: 304-18-19783</p>
         <p class="copyright">copyright &copy; TANTANFILM all right reserved.</p>
-
     </footer>
 </body>
 
