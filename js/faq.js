@@ -60,7 +60,7 @@ function renderFaqList(items, container) {
         html += '<span class="faq-toggle"></span>';
         html += '</div>';
         html += '<div class="faq-answer">';
-        html += '<div class="faq-answer-inner">' + escapeHtml(item.content) + '</div>';
+        html += '<div class="faq-answer-inner">' + escapeHtmlWithLineBreaks(item.content) + '</div>';
         html += '</div>';
         html += '</div>';
     }
@@ -124,6 +124,11 @@ function escapeHtml(text) {
     var div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function escapeHtmlWithLineBreaks(text) {
+    if (!text) return '';
+    return escapeHtml(text).replace(/\n/g, '<br>');
 }
 
 if (document.readyState === 'loading') {
