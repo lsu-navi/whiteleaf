@@ -33,6 +33,23 @@ section {
     color: #333;
 }
 
+/* 제목 + 가격을 세로로 쌓기 */
+/* .product-title {
+    display: flex;
+    flex-direction: column; */
+    /* 세로 배치 */
+    /* gap: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+} */
+
+.product-price {
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+}
+
 .product-list>li .product-list-item {
     margin: 0;
     padding-left: 0;
@@ -54,20 +71,32 @@ section {
 /* p가 있는 항목만: 금액(왼쪽) / 설명(오른쪽) */
 .product-list-item li:has(p) {
     display: grid;
-    grid-template-columns: 6em 1fr;
+    grid-template-columns: 20em 1fr;
     align-items: center;
     column-gap: 1rem;
 }
 
 .product-list-item li.price-item {
     display: grid;
-    grid-template-columns: 6em 1fr;
+    grid-template-columns: 20em 1fr;
     align-items: center;
     column-gap: 1rem;
 }
 
 .product-list-item li.price-item .price {
     display: block;
+}
+
+.product-list-item li.price-item p::before {
+    content: "| ";
+    color: #888;  /* 색상 원하시면 조절 */
+    margin-right: 8px;
+  }
+
+.vat {
+    margin-top: 10px;
+    color: #888;
+    font-size: 12px;
 }
 
 .product-list-item li p {

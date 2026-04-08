@@ -42,7 +42,7 @@ section .main-text  p {
     padding: 40px 0 0 0;
 }
 
-section .main-text  strong {
+/* section .main-text  strong {
     font-family: "Nanum Myeongjo", serif;
     text-align: center;
     display: block;
@@ -50,7 +50,7 @@ section .main-text  strong {
     color: #888;
     font-weight: bold;
     padding: 10px 0 40px 0;
-}
+} */
 
 @media (max-width: 600px) {
     .main-hero-video-wrap {

@@ -8,23 +8,24 @@ main {
     padding: 40px 0;
 }
 
-main img {
+/* main img {
     display: block;
     width: 500px;
     height: auto;
     margin: 0 auto 50px;
-}
+} */
 
 main .text-wrap p {
     margin-bottom: 10px;
     font-size: 14px;
+    line-height: 1.5;
 }
 
-main .text-wrap strong {
-    font-family: "Dancing Script", cursive;
+main .text-wrap .white-leaf {
     font-size: 14px;
     margin-top: 30px;
-    display: block;
+    color: #000;
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {
