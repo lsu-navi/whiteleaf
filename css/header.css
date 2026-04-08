@@ -165,6 +165,31 @@ nav ul li a:hover {
     }
 }
 
+@media (max-width: 430px) {
+    nav {
+        padding: 24px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 8px;
+        gap: 8px;
+    }
+
+    nav ul li {
+        float: none;
+        margin-right: 0;
+        font-size: 11px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
 
 
 
