@@ -22,6 +22,38 @@ footer .business-number {
     margin-bottom: 15px;
 }
 
+footer .kakao-contact {
+    margin-bottom: 15px;
+}
+
+footer .kakao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #3b2b2b;
+    text-decoration: none;
+}
+
+footer .kakao-link:hover {
+    text-decoration: underline;
+}
+
+footer .kakao-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fee500;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233b1e1e' d='M12 4C7.03 4 3 7.13 3 11c0 2.49 1.67 4.67 4.17 5.89L6 20l3.37-1.85c.84.17 1.72.26 2.63.26 4.97 0 9-3.13 9-7s-4.03-7-9-7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+footer .kakao-text {
+    color: #888;
+    font-size: 12px;
+}
+
 footer .copyright {
     margin-bottom: 0;
 }
