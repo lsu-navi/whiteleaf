@@ -166,8 +166,11 @@ nav ul li a:hover {
 }
 
 @media (max-width: 430px) {
+    /* 한 줄 고정 시 항목+gap 합이 뷰포트를 넘치면 가로 스크롤이 생기고,
+       첫 화면은 왼쪽부터 보여 "왼쪽으로 치우친" 것처럼 보임 → gap·글자 크기로 뷰 안에 맞춤 */
     nav {
-        padding: 24px 0;
+        padding: 24px max(6px, env(safe-area-inset-left, 0px)) 24px max(6px, env(safe-area-inset-right, 0px));
+        box-sizing: border-box;
     }
 
     nav ul {
@@ -176,15 +179,17 @@ nav ul li a:hover {
         align-items: center;
         flex-wrap: nowrap;
         width: 100%;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 8px;
-        gap: 10px 24px;
+        padding: 0 4px;
+        gap: 20px;
+        box-sizing: border-box;
     }
 
     nav ul li {
         float: none;
         margin-right: 0;
-        font-size: 12px;
+        font-size: 10px;
         text-align: center;
         white-space: nowrap;
     }
