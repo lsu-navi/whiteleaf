@@ -193,4 +193,8 @@ section {
     .product-list-item li p {
         font-size: 12px;
     }
+
+    .vat {
+        font-size: 10px;
+    }
 }
