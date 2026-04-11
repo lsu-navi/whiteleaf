@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://whiteleaf.co.kr/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://whiteleaf.co.kr/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whiteleaf.co.kr/film.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whiteleaf.co.kr/product.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whiteleaf.co.kr/reservation.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whiteleaf.co.kr/faq.html</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
