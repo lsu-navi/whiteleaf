@@ -4,6 +4,7 @@
 
     // 봇 감지
     if (navigator.webdriver) return;
+    if (/bot|crawler|spider|crawling|facebookexternalhit|WhatsApp|Slackbot|Twitterbot|LinkedInBot|Googlebot|Bingbot|Yeti|Daum|PetalBot|AhrefsBot|SemrushBot|MJ12bot|DotBot|Bytespider|GPTBot|ChatGPT/i.test(navigator.userAgent)) return;
 
     // 세션당 1회만 수집
     try {
