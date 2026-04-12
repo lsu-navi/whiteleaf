@@ -1,0 +1,11 @@
+{
+  "name": "whiteleaf",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "preview": "npx serve ."
+  },
+  "devDependencies": {
+    "terser": "^5"
+  }
+}
