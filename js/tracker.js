@@ -5,6 +5,12 @@
     // 봇 감지
     if (navigator.webdriver) return;
 
+    // 세션당 1회만 수집
+    try {
+        if (sessionStorage.getItem('_wl_tracked')) return;
+        sessionStorage.setItem('_wl_tracked', '1');
+    } catch (e) {}
+
     var ua = navigator.userAgent;
 
     // 브라우저 판별
