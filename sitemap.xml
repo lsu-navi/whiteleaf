@@ -5,23 +5,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://whiteleaf.co.kr/about.html</loc>
+    <loc>https://whiteleaf.co.kr/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://whiteleaf.co.kr/film.html</loc>
+    <loc>https://whiteleaf.co.kr/film</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://whiteleaf.co.kr/product.html</loc>
+    <loc>https://whiteleaf.co.kr/product</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://whiteleaf.co.kr/reservation.html</loc>
+    <loc>https://whiteleaf.co.kr/reservation</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whiteleaf.co.kr/faq.html</loc>
+    <loc>https://whiteleaf.co.kr/faq</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
